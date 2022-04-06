@@ -1,0 +1,97 @@
+Limitation of other languages :
+
+Python - Its an interpreted language so creates problem in large size code
+Java - When go in depth it gets complex
+C/C++ - They are slow at compile time
+
+--------------------------------------------------------------------------------------------
+
+Why Go ?
+
+-> It is strong and statically typed
+-> it has excellent community support (Developed by google)
+-> Fast compilation
+-> It is garbage collected
+-> Built-in concurrency
+-> It identifies unused variables at the time of compilation
+
+--------------------------------------------------------------------------------------------
+
+Variables declaration :
+-> Variable can be declared in two ways :
+   var i int = 10   or i := 0        
+-> But when we are declaring the variable at package level, full declaration is needed
+    i.e               var k float32 = 10.5
+-> Variables can't be declared twice in the same scope.
+-> If the variable declared at package level is named in upper-case then it is 
+    globally accessible otherwise it is accessible inside its package scope.
+
+--------------------------------------------------------------------------------------------
+
+Bool :
+-> It can be used as a flag in our code
+
+String :
+-> Strings are immutable in go
+-> Strings in go represent utf8 character   
+-> Go uses UTF-8 encoding, so any valid character can be represented in Unicode code points.
+
+
+rune :
+-> A character is defined using “code points” in Unicode. Go language introduced a new 
+   term for this code point called rune.
+-> Go rune is also an alias of type int32 because Go uses UTF-8 encoding.
+
+---------------------------------------------------------------------------------------------------------------------
+
+                                     DEFER, PANIC AND RECOVER 
+
+Defer : We can invoke any function and delay its execution to any future time 
+        Also most common use case of defer is like opening a resource and checking the error and the closing 
+        the resource.
+-> Defer doesn't take a function instead it takes a function call.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Pointers :
+
+-> Go doesn't have pointers arithmetic unlike other languages like c/c++
+-> In advanced scenarios where we need to perform pointers arithmetic in go , we can import go "unsafe" package
+   to make it work.
+-> When we work with slices, the internal structure has a pointer to an array.(similar is the case with maps)
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Anonymous functions :
+-> declared, defined inside main function
+-> It is an immmediately invoked function
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+                                    GOROUTINES
+
+-> Goroutines are functions or methods that run concurrently with other functions or methods
+-> Goroutines can be thought of as lightweight threads. 
+-> The cost of creating a Goroutine is tiny when compared to a thread. 
+-> They are just few kB stack in size and the stack is dynamic
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+                                       CHANNELS
+
+-> Channels can be thought of as pipes using which Goroutines communicate. 
+   Similar to how water flows from one end to another in a pipe, data can be sent 
+   from one end and received from the other end using channels.
+
+-> Buffered channel
+-> closing and opening of channel
+-> length and capacity
+-> waitgroup
+-> worker pool
